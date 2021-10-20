@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FedeSoft</title>
+  
+    <!--links de bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   
+    <!--links de para validar formularios con jquery-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="plugins/jquery-validation/jquery.validate.min.js"></script>
+    
+    <!--links pare los estilos de login-->
+    <link rel="stylesheet" href="vista/css/login.css" />
+    
+</head>
+
+<body>
+
+    <form class="modal-content animate" >
+        <div class="imgcontainer">
+            <img src="vista/imagenes/login.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="txtCorreo"><b>Correo</b></label>
+            <input type="text" placeholder="Ingresar Correo" id="txtCorreo" name="txtCorreo" required>
+          
+            <div class="row">
+            <div class="col-sm-10">
+                <label for="txtcontraseña"><b>Contraseña</b></label>
+                <input type="password" placeholder="Ingresar Contraseña" id="txtcontraseña" name="txtcontraseña"
+                    required>
+            </div>
+            <div class="col-sm-2">
+                <button class="btn btn-primary" id="btnVercontraseña"
+                    style="margin-top: 22px; background-color: rgba(11, 50, 59, 0.822);" onclick="mostrarPassword()">
+                    <span class="fa fa-eye-slash icon"></span> </button>
+            </div>
+            </div>
+
+            <button type="button">Entrar</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+
+    </form>
+
+
+
+    <!--Seccion de script-->
+    <!---Este script funciona para mostrar o esconder la contraseña, con el boton que esta al lado le contraseña este cambia el tipo del input-->
+    <script type="text/javascript">
+        function mostrarPassword() {
+            var cambio = document.getElementById("txtcontraseña");
+            if (cambio.type == "password") {
+                cambio.type = "text";
+                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+            } else {
+                cambio.type = "password";
+                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
